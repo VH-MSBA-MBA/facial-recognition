@@ -19,4 +19,5 @@ from rekognition import views as rekognition_views
 
 urlpatterns = [
     path('', rekognition_views.index, name='index'),
+    path('submit/', rekognition_views.submit, name='submit'),
 ]
