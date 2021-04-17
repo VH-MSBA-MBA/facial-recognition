@@ -53,7 +53,7 @@
       <div class="row">
         <div class="col" id="picture"></div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-bottom: 20px;">
         <div class="col">
           <button
             type="button"
@@ -93,6 +93,18 @@
           >
             Submit
           </button>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col">
+          <div id="drink-suggestion">
+
+          </div>
+        </div>
+        <div class="col">
+          <div id="rekognition-response">
+
+          </div>
         </div>
       </div>
     </div>
@@ -142,22 +154,19 @@
         document.getElementById('webcam').replaceWith(newImg);
       };
 
-      const submitScreenshot = () => {
-        const picture = document.getElementById('webcam-picture-submit').src;
-        fetch('/submit/',
-        {
-          method: 'POST',
-          headers: {
-           'X-CSRFToken': csrftoken 
-          },
-          body: picture
-        }).then((response) => {
-          console.log(response);
-        }).catch((error) => {
-          console.log(error);
-        }) 
-        console.log('Submitted.');
-      };
+const submitScreenshot = async () => {
+  const picture = document.getElementById('webcam-picture-submit').src;
+  const res = await fetch('/submit/',
+  {
+    method: 'POST',
+    headers: {
+      'X-CSRFToken': csrftoken 
+    },
+    body: picture.replace('data:image/png;base64,','')
+  })
+  console.log(res);
+  console.log('Submitted.');
+};
     </script>
   </body>
 </html>

@@ -7,6 +7,5 @@ def index(request):
     return render(request, 'index.html')
 
 def submit(request):
-    repsonse = utils.detect_faces(request.body)
-    print(response)
-    return HttpResponse('Success')
+    response = utils.detect_faces(request.body)
+    return JsonResponse(response)
