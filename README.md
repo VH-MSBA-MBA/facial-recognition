@@ -1,6 +1,6 @@
 # Purpose
 
-This is a quick and dirty, no frills Django web application for a Masters of Science in Business Analytics grad student. It is just meant to demonstrate [AWS Rekognition](https://aws.amazon.com/rekognition/?blog-cards.sort-by=item.additionalFields.createdDate&blog-cards.sort-order=desc) for cloud technology project.
+This is a quick and dirty, no frills Django web application for a Masters of Science in Business Analytics final project. It is just meant to demonstrate [AWS Rekognition](https://aws.amazon.com/rekognition/?blog-cards.sort-by=item.additionalFields.createdDate&blog-cards.sort-order=desc) for cloud technology project.
 
 This application will ask to access your camera. If you consent, and take a picture of yourself, you can submit the picture. Rekognition will analyze and return characteristics about the picture such as mood, gender, age, etc.
 
